@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'about',
     'blog',
+    'book',
     'contact',
     'home',
     'location',
