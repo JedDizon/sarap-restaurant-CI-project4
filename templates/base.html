@@ -3,6 +3,7 @@
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
 {% url 'menu' as menu_url %}
+{% url 'location' as location_url %}
 
 
 <!DOCTYPE html>
@@ -77,7 +78,7 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">Table Booking</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'menu' %}">Menus</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'about' %}">About Us</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">Location</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'location' %}">Location</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">Contact Us</a></li>
                     </ul>
                 </div>
