@@ -23,6 +23,7 @@ from home.views import my_home
 urlpatterns = [
     path("about/", include("about.urls"), name="about-urls"),
     path('admin/', admin.site.urls),
+    path('contact/', include('contact.urls'), name='contact-urls'),
     path('home/', my_home, name='home'),
     path("location/", include("location.urls"), name="location-urls"),
     path('menu/', include('menu.urls'), name='menu-urls'),

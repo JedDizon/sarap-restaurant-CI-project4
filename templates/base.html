@@ -4,6 +4,7 @@
 {% url 'about' as about_url %}
 {% url 'menu' as menu_url %}
 {% url 'location' as location_url %}
+{% url 'contact' as contact_url %}
 
 
 <!DOCTYPE html>
@@ -79,7 +80,7 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'menu' %}">Menus</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'about' %}">About Us</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'location' %}">Location</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">Contact Us</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'contact' %}">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
