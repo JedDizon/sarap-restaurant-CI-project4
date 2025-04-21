@@ -10832,6 +10832,26 @@ body {
   background-size: cover;
 }
 
+/* Background Images */
+.index-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-scottwebb-leaves.jpg");
+}
+.booking-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-rynl-studios-citywithboat.jpg");
+}
+.menus-bg {  
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-palumalerba-reiceterraces.jpg");
+}
+.about-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-denniz-futalan-street.jpg");
+}
+.location-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-laura-reusch-coast.jpg");
+}
+.contact-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-maksgelatin-leaves2.jpg");
+}
+
 p {
   line-height: 1.75;
 }
@@ -11026,4 +11046,60 @@ p {
 
 .address strong {
   font-size: 1.2rem;
+}
+
+
+/* Styling for social media buttons */
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+/* Twitter */
+.fa-x-twitter {
+  background: #55ACEE;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+/* Insta */
+.fa-instagram {
+  background: #FF0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+/* Tiktok */
+.fa-tiktok {
+  background: #000000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px;
 }

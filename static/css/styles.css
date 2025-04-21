@@ -10832,6 +10832,26 @@ body {
   background-size: cover;
 }
 
+/* Background Images */
+.index-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-scottwebb-leaves.jpg");
+}
+.booking-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-rynl-studios-citywithboat.jpg");
+}
+.menus-bg {  
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-palumalerba-reiceterraces.jpg");
+}
+.about-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-denniz-futalan-street.jpg");
+}
+.location-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-laura-reusch-coast.jpg");
+}
+.contact-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-maksgelatin-leaves2.jpg");
+}
+
 p {
   line-height: 1.75;
 }
