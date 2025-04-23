@@ -43,31 +43,6 @@
 
 </head>
 
-<!-- Navigation -->
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span class="red-o">o</span>de<span
-                        class="thin">|star</span></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="#">Home</a>
-                    </li>
-
-                </ul>
-                <span class="navbar-text text-muted">
-                    adventures of a software developer
-                </span>
-            </div>
-        </div>
-    </nav> -->
-
-
 <body class="{% block body_class %}{% endblock %}">
     <header>
         <h1 class="site-heading text-center text-faded d-none d-lg-block">
@@ -118,7 +93,7 @@
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group me-2 " role="group" aria-label="First group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Book a
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'book' %}">Book a
                                         Table</a></div>
                             </div>
                         </div>
@@ -127,7 +102,7 @@
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group me-2" role="group" aria-label="Second group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">See a Menu
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'menu' %}">See a Menu
                                         first</a>
                                 </div>
                             </div>
@@ -137,11 +112,11 @@
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group me-2 " role="group" aria-label="First group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Book a
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'book' %}">Book a
                                         Table</a></div>
                             </div>
                             <div class="btn-group me-2" role="group" aria-label="Second group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Menus</a>
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'menu' %}">Menus</a>
                                 </div>
                             </div>
                         </div>
