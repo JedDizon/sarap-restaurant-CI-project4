@@ -81,8 +81,34 @@
 
     <section class="page-section about-heading">
         <div class="container">
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="{% static 'assets/img/about.jpg'%}"
-                alt="...">
+
+            {% if request.resolver_match.url_name == 'menu' %}
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+                src="{% static 'assets/img/pexels-reneterp-restointerior1.jpg'%}" alt="Restaurant Interior">
+            {% elif request.resolver_match.url_name == 'book' %}
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+                src="{% static 'assets/img/pexels-eyupcan-timur-restoext1.jpg'%}" alt="Restaurant Exterior">
+            {% elif request.resolver_match.url_name == 'location' %}
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+                src="{% static 'assets/img/pexels-daipi-restoext2.jpg'%}"
+                alt="Restaurant Exterior">
+            {% elif request.resolver_match.url_name == 'contact' %}
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+                src="{% static 'assets/img/pexels-gu-ko-restointerior3.jpg'%}"
+                alt="Chef at counter">
+            {% elif request.resolver_match.url_name == 'about' %}
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+                src="{% static 'assets/img/baguiofestival2.jpg' %}"
+                alt="Baguio Festival">
+
+            {% else %}
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+                src="{% static 'assets/img/filipino_rice_cakes.jpg'%}" alt="Filipino Rice Cakes">
+            
+                <!-- DO CAROUSEL FOR HOME -->
+
+            {% endif %}
+
             <div class="about-heading-content">
                 <div class="row">
                     <div class="col-sm">
@@ -93,7 +119,8 @@
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group me-2 " role="group" aria-label="First group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'book' %}">Book a
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
+                                        href="{% url 'book' %}">Book a
                                         Table</a></div>
                             </div>
                         </div>
@@ -102,7 +129,8 @@
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group me-2" role="group" aria-label="Second group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'menu' %}">See a Menu
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
+                                        href="{% url 'menu' %}">See a Menu
                                         first</a>
                                 </div>
                             </div>
@@ -112,11 +140,13 @@
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group me-2 " role="group" aria-label="First group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'book' %}">Book a
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
+                                        href="{% url 'book' %}">Book a
                                         Table</a></div>
                             </div>
                             <div class="btn-group me-2" role="group" aria-label="Second group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'menu' %}">Menus</a>
+                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
+                                        href="{% url 'menu' %}">Menus</a>
                                 </div>
                             </div>
                         </div>
@@ -154,9 +184,12 @@
             <div class="col-3 col-md-2 mb-3">
                 <h5>Information</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-body-secondary">About Us</a></li>
-                    <li class="nav-item mb-2"><a href="{% url 'book' %}" class="nav-link p-0 text-body-secondary">Book Table</a></li>
-                    <li class="nav-item mb-2"><a href="{% url 'menu' %}" class="nav-link p-0 text-body-secondary">Menus</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-body-secondary">About
+                            Us</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'book' %}" class="nav-link p-0 text-body-secondary">Book
+                            Table</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'menu' %}"
+                            class="nav-link p-0 text-body-secondary">Menus</a></li>
                 </ul>
             </div>
 
@@ -184,7 +217,7 @@
                     <a href="https://www.instagram.com" class="fa-brands fa-instagram fa-3x" target="_blank"></a>
                     <a href="https://www.tiktok.com" class="fa-brands fa-tiktok fa-3x" target="_blank"></a>
                 </div>
-                
+
             </div>
 
         </div>
