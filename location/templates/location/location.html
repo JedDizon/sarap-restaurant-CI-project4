@@ -9,7 +9,17 @@
 
 <!-- location.html content starts here -->
 <section class="page-section cta">
-    <h1>Location</h1>
+    <div class="cta-inner bg-faded text-center rounded">
+        <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">Here's where to find us</span>
+            <span class="section-heading-lower">
+                Sarap Talaga RestoBar, 123 Fake Street,Dublin 8
+            </span>
+        </h2>
+        <div id="google-map">
+        </div>
+
+    </div>
 </section>
 
 
@@ -43,7 +53,11 @@
     </div>
 </section>
 
+{% block scripts %}
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs8GdSA1iPGM6SJrEX7Z5efD2iqkT1s6U&callback=initMap""></script>
+<script src=" {% static 'js/location.js' %}"></script>
+{% endblock %}
+
 <!-- location.html content ends here -->
 
 {% endblock %}
-
