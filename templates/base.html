@@ -83,36 +83,32 @@
         <div class="container">
 
             {% if request.resolver_match.url_name == 'menu' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
                 src="{% static 'assets/img/pexels-reneterp-restointerior1.jpg'%}" alt="Restaurant Interior">
             {% elif request.resolver_match.url_name == 'book' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
                 src="{% static 'assets/img/pexels-eyupcan-timur-restoext1.jpg'%}" alt="Restaurant Exterior">
             {% elif request.resolver_match.url_name == 'location' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
-                src="{% static 'assets/img/pexels-daipi-restoext2.jpg'%}"
-                alt="Restaurant Exterior">
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
+                src="{% static 'assets/img/pexels-daipi-restoext2.jpg'%}" alt="Restaurant Exterior">
             {% elif request.resolver_match.url_name == 'contact' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
-                src="{% static 'assets/img/pexels-gu-ko-restointerior3.jpg'%}"
-                alt="Chef at counter">
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
+                src="{% static 'assets/img/pexels-gu-ko-restointerior3.jpg'%}" alt="Chef at counter">
             {% elif request.resolver_match.url_name == 'about' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
-                src="{% static 'assets/img/baguiofestival2.jpg' %}"
-                alt="Baguio Festival">
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
+                src="{% static 'assets/img/baguiofestival2.jpg' %}" alt="Baguio Festival">
 
             {% else %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
                 src="{% static 'assets/img/filipino_rice_cakes.jpg'%}" alt="Filipino Rice Cakes">
-            
-                <!-- DO CAROUSEL FOR HOME -->
+
+            <!-- DO CAROUSEL FOR HOME -->
 
             {% endif %}
 
-            <div class="about-heading-content">
-                <div class="row">
-                    <div class="col-sm">
-                    </div>
+            <div class="about-heading-content row justify-content-center">
+                <div class="col-md-8 text-center">
+                    
                     <div class="col-sm">
 
                         {% if request.resolver_match.url_name == 'menu' %}
@@ -140,21 +136,24 @@
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group me-2 " role="group" aria-label="First group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
-                                        href="{% url 'book' %}">Book a
-                                        Table</a></div>
+                                <div class="intro-button mx-auto">
+                                    <a class="btn btn-primary btn-xl" href="{% url 'book' %}">
+                                        Book a Table
+                                    </a>
+                                </div>
                             </div>
                             <div class="btn-group me-2" role="group" aria-label="Second group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
-                                        href="{% url 'menu' %}">Menus</a>
+                                <div class="intro-button mx-auto">
+                                    <a class="btn btn-primary btn-xl" href="{% url 'menu' %}">
+                                        Menus
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         {% endif %}
                     </div>
-                    <div class="col-sm">
-                    </div>
+                   
                 </div>
             </div>
     </section>

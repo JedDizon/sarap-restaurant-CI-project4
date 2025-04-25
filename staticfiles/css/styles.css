@@ -12942,3 +12942,17 @@ p {
   align-self: center;
   margin: 0 auto;
 }
+
+/* Page images */
+.about-heading-img {
+  width: 100%;           /* Makes the image responsive */
+  height: 400px;         /* Fixed height to normalize all */
+  object-fit: cover;     /* Ensures image fills area without stretching */
+}
+
+@media (max-width: 768px) {
+  .about-heading-img {
+      height: 250px;
+  }
+}
+
