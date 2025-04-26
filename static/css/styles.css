@@ -4138,6 +4138,13 @@ fieldset:disabled .btn {
   border-top-right-radius: 0;
 }
 
+/* Active html */
+.navbar-nav .nav-item.active .nav-link {
+  font-weight: bold;
+  color: #9D7CBF;
+  text-decoration: underline;
+}
+
 .nav {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
@@ -12723,7 +12730,7 @@ p {
 
 #mainNav .navbar-brand {
   /* color: #e6a756; ORIGINAL */
-  color: #FAF7F0;
+  color: #FFB84C;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -12734,7 +12741,7 @@ p {
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
   /* color: #e6a756; ORIGINAL */
-  color: #FAF7F0;
+  color: #FFB84C;
 }
 
 @media (min-width: 992px) {
@@ -12749,7 +12756,7 @@ p {
 
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
     /* color: #e6a756; ORIGINAL */
-    color: #FAF7F0;
+    color: #FFB84C;
   }
 }
 
@@ -12955,4 +12962,6 @@ p {
       height: 250px;
   }
 }
+
+
 
