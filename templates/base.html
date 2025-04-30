@@ -40,6 +40,8 @@
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
+    <!--favicon-->
+    <link rel="icon" href="{% static 'assets/img/saraptalagalogo_blackwhite_small.png' %}" type="image/png">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -94,20 +96,17 @@
                     <li class="nav-item px-lg-4 {% if request.path == '/contact/' %}active{% endif %}">
                         <a class="nav-link text-uppercase" href="{% url 'contact' %}">Contact Us</a>
                     </li>
-
+            
                     {% if user.is_authenticated %}
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase {% if request.path == logout_url %}active{% endif %}"
-                            aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                    <li class="nav-item px-lg-4 {% if request.path == logout_url %}active{% endif %}">
+                        <a class="nav-link text-uppercase " aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase {% if request.path == signup_url %}active{% endif %}"
-                            aria-current="page" href="{% url 'account_signup' %}">Register</a>
+                    <li class="nav-item px-lg-4 {% if request.path == signup_url %}active{% endif %}">
+                        <a class="nav-link text-uppercase " aria-current="page" href="{% url 'account_signup' %}">Register</a>
                     </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase {% if request.path == login_url %}active{% endif %}"
-                            aria-current="page" href="{% url 'account_login' %}">Login</a>
+                    <li class="nav-item px-lg-4 {% if request.path == login_url %}active{% endif %}">
+                        <a class="nav-link text-uppercase " aria-current="page" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
 
@@ -170,6 +169,10 @@
                                 </div>
                             </div>
                         </div>
+
+                        {% elif request.resolver_match.url_name == 'account_login' %}
+                        {% elif request.resolver_match.url_name == 'account_signup' %}
+                        {% elif request.resolver_match.url_name == 'account_logout' %}
 
                         {% else %}
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
