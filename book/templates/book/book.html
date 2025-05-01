@@ -7,17 +7,19 @@
 
 <!-- book.html content starts here -->
 
-<!--Address section with message-->
-<section class="page-section cta">
-    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-        <div class="row">
-            <div class="col-3 col-md-7 mb-3">
-                <h2 class="section-heading mb-4">
-                    <span class="section-heading-lower">Can't wait to see you there!</span>
-                </h2>
-            </div>
+<!--Successful booking-->
+{% if success %}
+<div class="alert alert-success mt-3" role="alert">
+    Your reservation was submitted successfully!
+</div>
+{% endif %}
 
-            <div class="col-3 col-md-5 mb-3">
+<!--Address section with message-->
+<section class="page-section cta text-center">
+    <h1>ADD IMAGE (SEE BOOTSTRAP ON ABOUT/STORE)</h1>
+
+        <div class="row">
+            <div class="col-3 col-md-6 mb-3">
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2">
                         123 Fake Street, Dublin 8, D08 ABCD, Ireland</li>
@@ -25,68 +27,69 @@
                     <li class="nav-item mb-2">Email: sarap@gmail.com</li>
                 </ul>
             </div>
+
+            <div class="col-3 col-md-6 mb-3">
+                <h5>Opening Hours</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        Monday to Thursday<br>
+                        12:00 - 21:00
+                    </li>
+                    <li class="nav-item mb-2">
+                        Friday to Sunday<br>
+                        14:00 - 23:00
+                    </li>
+                </ul>
+            </div>
         </div>
 
-    </div>
 </section>
 
 <!--Book a table-->
 <section class="page-section cta">
     <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-        <div class="row">
-            <h5>Opening Hours</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2">
-                    Monday to Thursday<br>
-                    12:00 - 21:00
-                </li>
-                <li class="nav-item mb-2">
-                    Friday to Sunday<br>
-                    14:00 - 23:00
-                </li>
-            </ul>
-        </div>
-
         {% if user.is_authenticated %}
-        <form>
-            <div class="row text-start p-3">
-                <div data-mdb-input-init class="form-outline">
-                    <label class="form-label" for="typeNumber">Number of Guests</label>
-                    <input type="number" id="typeNumber" class="form-control" />
-                </div>
-                <div class="form-outline" style="width: 22rem;" data-mdb-datepicker-init="" data-mdb-input-init=""
-                    data-mdb-input-initialized="true" data-mdb-datepicker-initialized="true">
-                    <label for="exampleDatepicker1" class="form-label" style="margin-left: 0px;">Select a date</label>
-                    <input type="text" class="form-control form-icon-trailing" id="exampleDatepicker1">
-                    
-                    <div class="form-notch">
-                        <div class="form-notch-leading" style="width: 9px;"></div>
-                        <div class="form-notch-middle" style="width: 82.4px;"></div>
-                        <div class="form-notch-trailing"></div>
-                    </div>
-                    <button id="datepicker-toggle-408596" type="button" class="datepicker-toggle-button"
-                        data-mdb-toggle="datepicker">
-                        <i class="far fa-calendar datepicker-toggle-icon"></i>
-                    </button>
-                </div>
-            </div>
+        <form method="POST">
 
-            <button type="submit" class="btn btn-primary">Book now </button>
-
+            <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">Make a booking enquiry</span>
+                <span class="section-heading-upper">Can't wait to see you here!</span>
+            </h2>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Book Now</button>
         </form>
         {% else %}
         <div class="alert alert-warning mt-3" role="alert">
-            You must be logged in to book a table. Please 
-            <a href="{% url 'account_login' %}" class="alert-link custom-hover">Sign in</a> or 
+            You must be logged in to book a table. Please
+            <a href="{% url 'account_login' %}" class="alert-link custom-hover">Sign in</a> or
             <a href="{% url 'account_signup' %}" class="alert-link custom-hover">register</a> an account to get started.
         </div>
         {% endif %}
 
     </div>
 
-
     </div>
 </section>
+
+<!--Showcase bookings-->
+{% if reservations %}
+    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h3 class="mt-5">Your Reservations</h3>
+        <ul class="list-group">
+            {% for r in reservations %}
+            <li class="list-group-item">
+                {{ r.requested_date }} at {{ r.requested_time }} for {{ r.seats }} guests —
+                <strong>Status:</strong> {{ r.get_status_display }}
+            </li>
+            {% empty %}
+            <li class="list-group-item">You have no bookings yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+
+{% endif %}
 
 <!-- book.html content ends here -->
 
