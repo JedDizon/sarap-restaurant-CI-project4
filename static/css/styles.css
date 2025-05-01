@@ -295,6 +295,14 @@ a:hover {
   color: var(--bs-link-hover-color);
 }
 
+
+/* Links to sign-up and login when user is signed out on booking page */
+.custom-hover:hover {
+  text-decoration: underline;
+  color: var(--bs-link-hover-color); /* or any color you prefer */
+}
+
+
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
   color: inherit;
@@ -12657,6 +12665,18 @@ body {
 
 .contact-bg {
   background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/pexels-maksgelatin-leaves2.jpg");
+}
+
+.signup-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/bangka_at_beach.jpg");
+}
+
+.login-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/philippines_mountain_forest.jpg");
+}
+
+.logout-bg {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/manila_street.jpg");
 }
 
 p {

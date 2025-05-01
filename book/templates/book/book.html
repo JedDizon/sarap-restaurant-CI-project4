@@ -47,6 +47,7 @@
             </ul>
         </div>
 
+        {% if user.is_authenticated %}
         <form>
             <div class="row text-start p-3">
                 <div data-mdb-input-init class="form-outline">
@@ -73,6 +74,14 @@
             <button type="submit" class="btn btn-primary">Book now </button>
 
         </form>
+        {% else %}
+        <div class="alert alert-warning mt-3" role="alert">
+            You must be logged in to book a table. Please 
+            <a href="{% url 'account_login' %}" class="alert-link custom-hover">Sign in</a> or 
+            <a href="{% url 'account_signup' %}" class="alert-link custom-hover">register</a> an account to get started.
+        </div>
+        {% endif %}
+
     </div>
 
 
