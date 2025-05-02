@@ -16,32 +16,44 @@
 
 <!--Address section with message-->
 <section class="page-section cta text-center">
-    <h1>ADD IMAGE (SEE BOOTSTRAP ON ABOUT/STORE)</h1>
 
-        <div class="row">
-            <div class="col-3 col-md-6 mb-3">
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2">
-                        123 Fake Street, Dublin 8, D08 ABCD, Ireland</li>
-                    <li class="nav-item mb-2">Tel: +000 123 456 7890</li>
-                    <li class="nav-item mb-2">Email: sarap@gmail.com</li>
-                </ul>
-            </div>
+        <div class="container">
+            <div class="product-item">
+                <div class="product-item-title d-flex">
+                    <div class="bg-faded p-5  ms-auto rounded">
+                        <h3>Come visit us</h3>
 
-            <div class="col-3 col-md-6 mb-3">
-                <h5>Opening Hours</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2">
-                        Monday to Thursday<br>
-                        12:00 - 21:00
-                    </li>
-                    <li class="nav-item mb-2">
-                        Friday to Sunday<br>
-                        14:00 - 23:00
-                    </li>
-                </ul>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                123 Fake Street, Dublin 8, D08 ABCD, Ireland</li>
+                            <li class="nav-item mb-2">Tel: +000 123 456 7890</li>
+                            <li class="nav-item mb-2">Email: sarap@gmail.com</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+                    src="{% static 'assets/img/pexels-bertellifotografia-restointerior6.jpg' %}" alt="..." />
+                <div class="product-item-description d-flex me-auto">
+                    <div class="bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-0">
+                            <span class="section-heading-upper">Opening Hours</span>
+                        </h2>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                Monday to Thursday<br>
+                                12:00 - 21:00
+                            </li>
+                            <li class="nav-item mb-2">
+                                Friday to Sunday<br>
+                                14:00 - 23:00
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+
 
 </section>
 
@@ -74,20 +86,20 @@
 
 <!--Showcase bookings-->
 {% if reservations %}
-    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-        <h3 class="mt-5">Your Reservations</h3>
-        <ul class="list-group">
-            {% for r in reservations %}
-            <li class="list-group-item">
-                {{ r.requested_date }} at {{ r.requested_time }} for {{ r.seats }} guests —
-                <strong>Status:</strong> {{ r.get_status_display }}
-            </li>
-            {% empty %}
-            <li class="list-group-item">You have no bookings yet.</li>
-            {% endfor %}
-        </ul>
-    </div>
-    <br>
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+    <h3 class="mt-5">Your Reservations</h3>
+    <ul class="list-group">
+        {% for r in reservations %}
+        <li class="list-group-item">
+            {{ r.requested_date }} at {{ r.requested_time }} for {{ r.seats }} guests —
+            <strong>Status:</strong> {{ r.get_status_display }}
+        </li>
+        {% empty %}
+        <li class="list-group-item">You have no bookings yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+<br>
 
 {% endif %}
 
