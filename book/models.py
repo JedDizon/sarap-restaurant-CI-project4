@@ -18,6 +18,9 @@ class Reservation(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    guest_name = models.CharField(max_length=100, blank=True, null=True)
+    guest_phone = models.CharField(max_length=20, blank=True, null=True)
+
     created_date = models.DateTimeField(auto_now_add=True)
     requested_date = models.DateField()
     requested_time = models.TimeField()
@@ -25,4 +28,4 @@ class Reservation(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
 
     def __str__(self):
-        return f"{self.user.username} - {self.requested_date} at {self.requested_time}"
+        return f"{self.user.username} | {self.guest_name or 'N/A'} - {self.requested_date} @ {self.requested_time}"
