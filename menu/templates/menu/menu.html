@@ -1,9 +1,7 @@
 {% extends "base.html" %}
+{% block body_class %}menus-bg{% endblock %}
 {% block content %}
 {% load static %}
-
-<body {% block body_class %}menus-bg{% endblock %}>
-</body>
 
 
 
@@ -21,31 +19,31 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
         <div class="col">
-            <a class="thumbnail" href="#">
-                <div class="h-100">
-                    <img src="https://images.pexels.com/photos/6646369/pexels-photo-6646369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        class="card-img-top rounded-circle img-thumbnail" alt="...">
-                    <div class="card-body p-3">
-                        <h3 class="card-title section-heading mb-4">Lunch</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col">
-            <a class="thumbnail" href="#">
+            <a class="thumbnail" href="#tab1-tab" onclick="openTab('tab1-tab')">
                 <div class="h-100">
                     <img src="https://images.pexels.com/photos/6645977/pexels-photo-6645977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         class="card-img-top rounded-circle img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h3 class="card-title section-heading mb-4">Dinner</h3>
+                    <div class="card-body p-3">
+                        <h3 class="card-title section-heading mb-4">Main Menu</h3>
                     </div>
                 </div>
             </a>
         </div>
 
         <div class="col">
-            <a class="thumbnail" href="#">
+            <a class="thumbnail" href="#tab2-tab" onclick="openTab('tab2-tab')">
+                <div class="h-100">
+                    <img src="https://images.pexels.com/photos/6246869/pexels-photo-6246869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        class="card-img-top rounded-circle img-thumbnail" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title section-heading mb-4">Desserts</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="thumbnail" href="#tab3-tab" onclick="openTab('tab3-tab')">
                 <div class="h-100">
                     <img src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         class="card-img-top rounded-circle img-thumbnail" alt="...">
@@ -58,6 +56,79 @@
 
     </div>
 </div>
+
+<!--Menu tabs-->
+<section class="page-section cta" id="menuTabSection">
+    <div class="container">
+        <ul class="nav nav-tabs mb-3" id="menuTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button"
+                    role="tab" aria-controls="tab1" aria-selected="true">
+                    Main Menu
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button"
+                    role="tab" aria-controls="tab2" aria-selected="false">
+                    Desserts
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button"
+                    role="tab" aria-controls="tab3" aria-selected="false">
+                    Drinks
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tabs content -->
+        <div class="tab-content" id="menuTabsContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                <p>Lunch menu content goes here.</p>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <p>Dinner menu content goes here.</p>
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                <p>Drinks menu content goes here.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function openTab(tabId) {
+        const triggerTab = document.getElementById(tabId);
+        if (triggerTab) {
+            new bootstrap.Tab(triggerTab).show();
+
+            // Scroll to the tab section instead of just the nav
+            const tabSection = document.getElementById('menuTabSection');
+            if (tabSection) {
+                tabSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hash = window.location.hash;
+        if (hash.startsWith('#tab')) {
+            const tabButton = document.querySelector(`button${hash}`);
+            if (tabButton) {
+                new bootstrap.Tab(tabButton).show();
+
+                // Scroll to tabs section
+                const tabSection = document.getElementById('menuTabSection');
+                if (tabSection) {
+                    tabSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+    });
+</script>
 
 <!-- menu.html content ends here -->
 
