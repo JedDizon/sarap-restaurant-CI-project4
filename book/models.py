@@ -26,6 +26,7 @@ class Reservation(models.Model):
     requested_time = models.TimeField()
     seats = models.PositiveIntegerField()
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.user.username} | {self.guest_name or 'N/A'} - {self.requested_date} @ {self.requested_time}"

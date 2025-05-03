@@ -93,8 +93,11 @@
         <li class="list-group-item">
             <div class="d-flex justify-content-between align-items-center">
                 <span>
-                    {{ r.requested_date }} at {{ r.requested_time }} for {{ r.seats }} guests —
-                    <strong>Status:</strong> {{ r.get_status_display }}
+                    {{ r.requested_date }} at {{ r.requested_time }} for {{ r.seats }} guests — 
+                    <strong>Status:</strong> {{ r.get_status_display }}<br>
+                    {% if r.updated_on %}
+                        <small class="text-muted">Updated on {{ r.updated_on|date:"M d, Y H:i" }}</small>
+                    {% endif %}
                 </span>
                 {% if user == r.user or user.is_staff %}
                 <form method="post" class="d-inline">
@@ -114,6 +117,8 @@
             </form>
             {% endif %}
         </li>
+
+        
         {% empty %}
         <li class="list-group-item">You have no bookings yet.</li>
         {% endfor %}
