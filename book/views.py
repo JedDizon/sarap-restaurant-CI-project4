@@ -61,6 +61,8 @@ def booking_render(request):
                         updated.status = 'pending'
                     updated.save()
                     success = True
+                    edit_id = None
+                    edit_form = None
             else:
                 form = ReservationForm(request.POST)
                 if form.is_valid():
