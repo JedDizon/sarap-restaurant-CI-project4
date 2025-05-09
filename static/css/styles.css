@@ -295,6 +295,19 @@ a:hover {
   color: var(--bs-link-hover-color);
 }
 
+/* Menu images */
+.menu-img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  margin: 20px auto;
+}
 
 /* Links to sign-up and login when user is signed out on booking page */
 .custom-hover:hover {
@@ -12972,9 +12985,9 @@ p {
 
 /* Page images */
 .about-heading-img {
-  width: 100%;           /* Makes the image responsive */
-  height: 400px;         /* Fixed height to normalize all */
-  object-fit: cover;     /* Ensures image fills area without stretching */
+  width: 100%;           
+  height: 400px;         
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
