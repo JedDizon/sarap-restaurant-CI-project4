@@ -1,33 +1,8 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import Reservation, Book
 from .forms import ReservationForm
-
-def booking_render(request):
-    book = Book.objects.all().order_by('-updated_on').first()
-    form = None
-    success = False
-    reservations = None
-
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            form = ReservationForm(request.POST)
-            if form.is_valid():
-                reservation = form.save(commit=False)
-                reservation.user = request.user
-                reservation.save()
-                success = True
-        else:
-            form = ReservationForm()
-
-        # Only fetch reservations if user is logged in
-        reservations = Reservation.objects.filter(user=request.user).order_by('-created_date')
-
-    return render(request, "book/book.html", {
-        "book": book,
-        "form": form,
-        "success": success,
-        "reservations": reservations,
-    })
+from django.utils import timezone
+from datetime import timedelta
 
 def booking_render(request):
     book = Book.objects.all().order_by('-updated_on').first()
@@ -38,6 +13,21 @@ def booking_render(request):
     reservations = None
 
     if request.user.is_authenticated:
+        # Auto-delete outdated reservations
+        cutoff = timezone.now().date() - timedelta(days=5)
+
+        # Delete declined reservations older than 5 days (based on updated date)
+        Reservation.objects.filter(
+            status='declined',
+            updated_on__lt=timezone.now() - timedelta(days=5)
+        ).delete()
+
+        # Delete approved reservations 5 days after their requested date
+        Reservation.objects.filter(
+            status='approved',
+            requested_date__lt=cutoff
+        ).delete()
+
         if request.method == 'POST':
             if 'edit_id' in request.POST:
                 reservation = get_object_or_404(Reservation, pk=edit_id)
@@ -73,7 +63,8 @@ def booking_render(request):
         else:
             form = ReservationForm()
 
-        reservations = Reservation.objects.filter(user=request.user).order_by('-created_date')
+        reservations = Reservation.objects.filter(user=request.user).order_by('-updated_on')
+
 
     return render(request, "book/book.html", {
         "book": book,
