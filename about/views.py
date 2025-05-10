@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import About
 from blog.models import Post
 
+
 # def about_me(request):
 #     """
 #     Renders the About page
@@ -15,9 +16,9 @@ from blog.models import Post
 #     )
 
 def about_view(request):
-    post = Post.objects.filter(status=1).order_by('-created_on').first()
+    posts = Post.objects.filter(status=1).order_by('-created_on')[:3]
     return render(
         request,
         'about/about.html',
-        {'post': post},
+        {'posts': posts},
     )
