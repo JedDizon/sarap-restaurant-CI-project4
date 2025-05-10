@@ -90,7 +90,7 @@
                 <!-- Starters -->
                 <h4 class="mt-4">Starters</h4>
                 {% for item in starters %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:3 %}
                 <img src="{% static 'assets/img/menu/main/streetfoodtusoktusok.jpg' %}" class="my-3 menu-img"
                     alt="Starter sample">
@@ -100,7 +100,7 @@
                 <!-- Mains -->
                 <h4 class="mt-4">Mains</h4>
                 {% for item in mains %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:3 %}
                 <img src="{% static 'assets/img/menu/main/sisig.jpg' %}" class="my-3 menu-img" alt="Main course image">
                 {% endif %}
@@ -109,7 +109,7 @@
                 <!-- Soups -->
                 <h4 class="mt-4">Soups</h4>
                 {% for item in soups %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:3 %}
                 <img src="{% static 'assets/img/menu/main/sinegang.jpg' %}" class="my-3 menu-img" alt="Soup image">
                 {% endif %}
@@ -118,7 +118,7 @@
                 <!-- Sides -->
                 <h4 class="mt-4">Sides</h4>
                 {% for item in sides %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:3 %}
                 <img src="{% static 'assets/img/menu/main/pinoybreakfast.jpg' %}" class="my-3 menu-img"
                     alt="Side dish image">
@@ -132,7 +132,7 @@
                 <h4 class="mt-4">Traditional Desserts</h4>
                 {% for item in desserts %}
                 {% if item.category == "Dessert - Traditional" %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:12 %}
                 <img src="{% static 'assets/img/menu/desserts/halohalo.jpg' %}" class="my-3 menu-img"
                     alt="Traditional dessert">
@@ -143,7 +143,7 @@
                 <h4 class="mt-4">Other Desserts</h4>
                 {% for item in desserts %}
                 {% if item.category == "Dessert - Other" %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:8 %}
                 <img src="{% static 'assets/img/menu/desserts/coconuticecream.jpg' %}" class="my-3 menu-img"
                     alt="Other dessert">
@@ -158,7 +158,7 @@
                 <h4 class="mt-4">Hot Drinks</h4>
                 {% for item in drinks %}
                 {% if item.category == "Drink - Hot" %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:6 %}
                 <img src="{% static 'assets/img/menu/drinks/coffee.jpg' %}" class="my-3 menu-img" alt="Hot drink">
                 {% endif %}
@@ -168,7 +168,7 @@
                 <h4 class="mt-4">Cocktails</h4>
                 {% for item in drinks %}
                 {% if item.category == "Drink - Cocktail" %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:6 %}
                 <img src="{% static 'assets/img/menu/drinks/cocktail2.jpg' %}" class="my-3 menu-img" alt="Cocktail">
                 {% endif %}
@@ -178,7 +178,7 @@
                 <h4 class="mt-4">Non-Alcoholic Cocktails</h4>
                 {% for item in drinks %}
                 {% if item.category == "Drink - Nonalcoholic" %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:6 %}
                 <img src="{% static 'assets/img/menu/drinks/taho.jpg' %}" class="my-3 menu-img"
                     alt="Nonalcoholic drink">
@@ -189,7 +189,7 @@
                 <h4 class="mt-4">Spirits</h4>
                 {% for item in drinks %}
                 {% if item.category == "Drink - Spirit" %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:6 %}
                 <img src="{% static 'assets/img/menu/drinks/cocktail1.jpg' %}" class="my-3 menu-img" alt="Spirit">
                 {% endif %}
@@ -199,7 +199,7 @@
                 <h4 class="mt-4">Beer</h4>
                 {% for item in drinks %}
                 {% if item.category == "Drink - Beer" %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:6 %}
                 <img src="{% static 'assets/img/menu/drinks/sanmiguel.jpg' %}" class="my-3 menu-img" alt="Beer">
                 {% endif %}
@@ -209,7 +209,7 @@
                 <h4 class="mt-4">Mixers</h4>
                 {% for item in drinks %}
                 {% if item.category == "Drink - Mixer" %}
-                <p><strong>{{ item.name }}</strong> — {{ item.description }} (£{{ item.cost }})</p>
+                <p><strong>{{ item.name }}</strong> — {{ item.description }} (€{{ item.cost }})</p>
                 {% if forloop.counter|divisibleby:6 %}
                 <img src="{% static 'assets/img/menu/drinks/strawberrymilkshake.jpg' %}" class="my-3 menu-img"
                     alt="Mixer">
