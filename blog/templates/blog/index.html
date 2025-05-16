@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body_class %}index-bg{% endblock %}
 {% load static %}
-        
+
 {% block content %}
 
 <!-- index.html content starts here -->
@@ -59,6 +59,7 @@
 
 
 <section class="page-section cta">
+    <h2 hidden>Welcome blog</h2>
     <div class="container">
         <div class="row">
 
@@ -67,7 +68,7 @@
                     <div class="intro">
                         <img class="intro-img img-fluid mb-3 mb-lg-0 rounded"
                             src="{% static 'assets\img\pexels-stijn-dijkstra-philippine-outdoors-with-bangka.jpg' %}"
-                            alt="..." />
+                            alt="...">
                         <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                             <h2 class="section-heading mb-4">
                                 <span class="section-heading-upper">{{ post_list.2.title }}</span>
@@ -84,35 +85,35 @@
 </section>
 
 
-    <!-- Menu / book table reminder-->
-    <section class="page-section cta">
-        <div class="cta-inner bg-faded text-center rounded">
-            <h2 class="section-heading mb-4">
-                <span class="section-heading-lower">Would you like to see our menus or book a table?</span>
-            </h2>
-            <div class="row">
-                <div class="col-sm">
-                </div>
-                <div class="col-sm">
-                    <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
-                        aria-label="Toolbar with button groups">
-                        <div class="btn-group me-2 " role="group" aria-label="First group">
-                            <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Book a
-                                    Table</a>
-                            </div>
+<!-- Menu / book table reminder-->
+<section class="page-section cta">
+    <div class="cta-inner bg-faded text-center rounded">
+        <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">Would you like to see our menus or book a table?</span>
+        </h2>
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
+                    aria-label="Toolbar with button groups">
+                    <div class="btn-group me-2 " role="group" aria-label="First group">
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Book a
+                                Table</a>
                         </div>
-                        <div class="btn-group me-2" role="group" aria-label="Second group">
-                            <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Menus</a>
-                            </div>
+                    </div>
+                    <div class="btn-group me-2" role="group" aria-label="Second group">
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Menus</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm">
-                </div>
+            </div>
+            <div class="col-sm">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- index.html content ends here -->
+<!-- index.html content ends here -->
 
-    {% endblock %}
+{% endblock %}

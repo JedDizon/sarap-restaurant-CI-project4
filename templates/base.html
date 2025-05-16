@@ -15,30 +15,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Welcome to Sarap Talaga RestoBar. Try out our authentic Filipino food" />
-    <meta name="author" content="Jehdil Dizon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Welcome to Sarap Talaga RestoBar. Try out our authentic Filipino food">
+    <meta name="author" content="Jehdil Dizon">
 
     <title>Sarap Talaga! RestoBar</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
-
-    <!-- Font Awesome CSS
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    Bootstrap CSS
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
     <!-- Font Awesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <!--favicon-->
     <link rel="icon" sizes="512x512" href="{% static 'assets/img/favicon_io/android-chrome-512x512.png' %}">
@@ -130,6 +123,7 @@
     <!--Welcome image & links to menu & table-->
 
     <section class="page-section about-heading">
+        <h2 hidden>Welcome links</h2>
         <div class="container">
 
             {% if request.resolver_match.url_name == 'menu' %}
@@ -169,9 +163,12 @@
                         <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group me-2 " role="group" aria-label="First group">
-                                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
-                                        href="{% url 'book' %}">Book a
-                                        Table</a></div>
+                                <div class="intro-button mx-auto">
+                                    <a class="btn btn-primary btn-xl"
+                                        href="{% url 'book' %}">
+                                        Book a Table
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
@@ -214,6 +211,7 @@
 
                 </div>
             </div>
+        </div>
     </section>
 
     {% block content %}
