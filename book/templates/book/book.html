@@ -31,7 +31,8 @@
                 </div>
             </div>
             <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-                src="{% static 'assets/img/pexels-bertellifotografia-restointerior6.jpg' %}" alt="..." />
+                src="{% static 'assets/img/pexels-bertellifotografia-restointerior6.jpg' %}"
+                alt="An image of the restaurant interior showing tables layout">
             <div class="product-item-description d-flex me-auto">
                 <div class="bg-faded p-5 rounded">
                     <h2 class="section-heading mb-0">
@@ -57,6 +58,7 @@
 
 <!--Book a table-->
 <section class="page-section cta">
+    <h2 hidden>Book a table</h2>
     <div class="intro-text left-0 text-center bg-faded p-5 rounded">
         {% if user.is_authenticated %}
         <form method="POST">
@@ -79,9 +81,6 @@
             <a href="{% url 'account_signup' %}" class="alert-link custom-hover">register</a> an account to get started.
         </div>
         {% endif %}
-
-    </div>
-
     </div>
 </section>
 
@@ -107,7 +106,8 @@
                     <input type="hidden" name="edit_id" value="{{ r.id }}">
                     <button type="submit" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </form>
-                <form method="post" class="d-inline ms-2" onsubmit="return confirm('Are you sure you want to cancel this reservation?');">
+                <form method="post" class="d-inline ms-2"
+                    onsubmit="return confirm('Are you sure you want to cancel this reservation?');">
                     {% csrf_token %}
                     <input type="hidden" name="delete_id" value="{{ r.id }}">
                     <button type="submit" class="btn btn-sm btn-outline-danger">Cancel Booking</button>
@@ -142,20 +142,20 @@
         const dateInput = document.querySelector('input[name="requested_date"]');
         const timeInput = document.querySelector('input[name="requested_time"]');
         const warning = document.getElementById("time-warning");
-    
+
         function validateTime() {
             const dateValue = dateInput.value;
             const timeValue = timeInput.value;
-    
+
             if (!dateValue || !timeValue) {
                 warning.style.display = "none";
                 return;
             }
-    
+
             const selectedDate = new Date(dateValue);
             const day = selectedDate.getDay(); // 0 = Sunday
             let minTime, maxTime;
-    
+
             if ([1, 2, 3, 4].includes(day)) {
                 // Mon–Thu
                 minTime = "12:00";
@@ -165,17 +165,17 @@
                 minTime = "14:00";
                 maxTime = "23:00";
             }
-    
+
             timeInput.min = minTime;
             timeInput.max = maxTime;
-    
+
             if (timeValue < minTime || timeValue > maxTime) {
                 warning.style.display = "block";
             } else {
                 warning.style.display = "none";
             }
         }
-    
+
         const today = new Date().toISOString().split('T')[0];
         if (dateInput) {
             dateInput.min = today;
@@ -185,6 +185,6 @@
             timeInput.addEventListener("change", validateTime);
         }
     });
-    </script>
+</script>
 
 {% endblock %}

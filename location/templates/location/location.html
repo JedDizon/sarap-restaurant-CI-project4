@@ -1,12 +1,11 @@
 {% extends "base.html" %}
+{% block body_class %}location-bg{% endblock %}
 {% block content %}
 {% load static %}
 
-<body {% block body_class %}location-bg{% endblock %}>
-</body>
-
 <!-- location.html content starts here -->
 <section class="page-section cta">
+    <h2 hidden>Restaurant Location</h2>
     <div class="cta-inner bg-faded text-center rounded">
         <h2 class="section-heading mb-4">
             <span class="section-heading-upper">Here's where to find us</span>
@@ -54,17 +53,18 @@
                             <span class="ms-auto">14:00 - 23:00</span>
                         </li>
                     </ul>
-                    <p class="mb-0">
+                    <div>
                         <h2 class="section-heading mb-4">
                             <span class="section-heading-lower">
                                 Contact Information
                             </span>
                         </h2>
-                        <br />
-                        Tel: +000 123 456 7890
-                        <br>
-                        Email: sarap@gmail.com
-                    </p>
+                        <p class="mb-0">
+                            Tel: +000 123 456 7890
+                            <br>
+                            Email: sarap@gmail.com
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,8 +103,8 @@
 </section>
 
 {% block scripts %}
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs8GdSA1iPGM6SJrEX7Z5efD2iqkT1s6U&callback=initMap""></script>
-<script src=" {% static 'js/location.js' %}"></script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs8GdSA1iPGM6SJrEX7Z5efD2iqkT1s6U&callback=initMap"></script>
+<script src="{% static 'js/location.js' %}"></script>
 {% endblock %}
 
 <!-- location.html content ends here -->

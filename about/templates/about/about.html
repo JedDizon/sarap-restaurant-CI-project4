@@ -6,6 +6,7 @@
 
 
 <section class="page-section cta">
+  <h2 hidden>Blog section</h2>
 <!-- Blog Section 1 -->
 {% if posts|length > 2 %}
 <section class="page-section">
@@ -18,7 +19,7 @@
           </h2>
         </div>
       </div>
-      <img class="product-item-img mx-auto d-flex rounded menu-img" src="{% static 'assets\img\bagac.jpg' %}" alt="image of bagac old town" />
+      <img class="product-item-img mx-auto d-flex rounded menu-img" src="{% static 'assets\img\bagac.jpg' %}" alt="image of bagac old town">
       <div class="product-item-description d-flex me-auto">
         <div class="bg-faded p-5 rounded">
           <p class="mb-0">{{ posts.2.content|safe }}</p>
@@ -41,7 +42,7 @@
           </h2>
         </div>
       </div>
-      <img class="product-item-img mx-auto d-flex rounded menu-img" src="{% static 'assets/img/ruins_with_volcano.jpg' %}" alt="Old church ruins with Volcano in the background" />
+      <img class="product-item-img mx-auto d-flex rounded menu-img" src="{% static 'assets/img/ruins_with_volcano.jpg' %}" alt="Old church ruins with Volcano in the background">
       <div class="product-item-description d-flex ms-auto">
         <div class="bg-faded p-5 rounded">
           <p class="mb-0">{{ posts.1.content|safe }}</p>
@@ -64,7 +65,7 @@
           </h2>
         </div>
       </div>
-      <img class="product-item-img mx-auto d-flex rounded menu-img" src="{% static 'assets/img/kamayan.jpg' %}" alt="kamayan-style presentation of filipino food on top of banana leaves" />
+      <img class="product-item-img mx-auto d-flex rounded menu-img" src="{% static 'assets/img/kamayan.jpg' %}" alt="kamayan-style presentation of filipino food on top of banana leaves">
       <div class="product-item-description d-flex me-auto">
         <div class="bg-faded p-5 rounded">
           <p class="mb-0">{{ posts.0.content|safe }}</p>
@@ -81,27 +82,27 @@
 <div class="row">
   <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
     <img src="{% static 'assets\img\pexels-kim-villanueva-baguiofestival.jpg' %}"
-      class="w-100 shadow-1-strong rounded mb-4" alt="Baguio Festival" />
+      class="w-100 shadow-1-strong rounded mb-4" alt="Baguio Festival">
 
     <img src="{% static 'assets\img\pexels-muffin-metromanila.jpg' %}" class="w-100 shadow-1-strong rounded mb-4"
-      alt="Metropolitan Manila" />
+      alt="Metropolitan Manila">
 
 
   </div>
 
   <div class="col-lg-4 mb-4 mb-lg-0">
     <img src="{% static 'assets\img\pexels-kharlitos-traddance.jpg' %}" class="w-100 shadow-1-strong rounded mb-4"
-      alt="Traddance" />
+      alt="Traddance">
 
     <img src="{% static 'assets\img\pexels-chiecharon-bicol.jpg' %}" class="w-100 shadow-1-strong rounded mb-4"
-      alt="Bicol" />
+      alt="Bicol">
   </div>
 
   <div class="col-lg-4 mb-4 mb-lg-0">
-    <img src="{% static 'assets\img\manilaroad.jpg' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Manila Road" />
+    <img src="{% static 'assets\img\manilaroad.jpg' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Manila Road">
 
     <img src="{% static 'assets\img\bangka.jpg' %}" class="w-100 shadow-1-strong rounded mb-4"
-      alt="Bangka (Tradional Boat)" />
+      alt="Bangka (Tradional Boat)">
   </div>
 </div>
 <!-- Gallery -->

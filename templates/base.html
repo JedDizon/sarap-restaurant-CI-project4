@@ -276,7 +276,7 @@
 
         </div>
         <div class="container">
-            <p class="m-0 small">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 small">Copyright &copy; Your Website <span id="copyright"></span></p>
         </div>
     </footer>
 
@@ -292,6 +292,12 @@
     {% block scripts %}
     <!-- Script for google maps -->
     {% endblock %}
+
+    <!--Load JQUERY & Copyright JS-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#copyright").text(new Date().getFullYear());
+    </script>
 
 </body>
 
