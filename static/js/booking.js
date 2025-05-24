@@ -44,4 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (timeInput) {
             timeInput.addEventListener("change", validateTime);
         }
+
+        // Cancel Edit Button
+        document.querySelectorAll(".cancel-edit-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const id = this.getAttribute("data-reservation-id");
+                const form = document.getElementById(`edit-form-${id}`);
+                if (form) form.remove(); 
+            });
+        });
     });

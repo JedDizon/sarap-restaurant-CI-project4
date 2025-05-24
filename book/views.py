@@ -3,6 +3,8 @@ from .models import Reservation, Book
 from .forms import ReservationForm
 from django.utils import timezone
 from datetime import timedelta
+from django.contrib import messages
+from django.shortcuts import redirect
 
 def booking_render(request):
     book = Book.objects.all().order_by('-updated_on').first()
@@ -39,7 +41,8 @@ def booking_render(request):
                     })
 
                 reservation_to_delete.delete()
-                success = True
+                messages.success(request, "Your reservation has been cancelled.")
+                return redirect('book') 
 
             # EDIT logic
             elif 'edit_id' in request.POST:
@@ -63,7 +66,8 @@ def booking_render(request):
                     if reservation_to_edit.status == 'approved':
                         updated.status = 'pending'
                     updated.save()
-                    success = True
+                    messages.success(request, "Your reservation has been updated!")
+                    return redirect('book') 
                     edit_id = None
                     edit_form = None
 
@@ -74,7 +78,8 @@ def booking_render(request):
                     new_reservation = form.save(commit=False)
                     new_reservation.user = request.user
                     new_reservation.save()
-                    success = True
+                    messages.success(request, "Your reservation has been submitted!")
+                    return redirect('book') 
         else:
             form = ReservationForm()
 
