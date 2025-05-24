@@ -1,3 +1,6 @@
+/* jshint esversion: 6 */
+/* global bootstrap */
+
 function openTab(tabId) {
     const triggerTab = document.getElementById(tabId);
     if (triggerTab) {

@@ -1,3 +1,7 @@
+/* jshint esversion: 6 */
+/* global google */
+/* exported initMap */
+
 function initMap() {
 
     /**
@@ -12,7 +16,7 @@ function initMap() {
         }
     ];
 
-    const centerMap = { lat: 53.347853, lng: -6.2678716 }; // Dublin, Ireland
+    const centerMap = { lat: 53.347853, lng: -6.2678716 }; 
 
     const mapOptions = {
         center: centerMap,
@@ -188,7 +192,7 @@ function initMap() {
                 ]
             }
         ],
-    }
+    };
 
     const map = new google.maps.Map(document.getElementById("google-map"), mapOptions);
 
@@ -196,10 +200,5 @@ function initMap() {
         position: { lat: markers[0].lat, lng: markers[0].lng },
         map: map,
     });
-
-    const infoWindow = new google.maps.InfoWindow({
-        minWidth: 200,
-        maxWidth: 200,
-    })
 
 }

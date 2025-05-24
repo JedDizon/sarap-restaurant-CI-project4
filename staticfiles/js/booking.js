@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 document.addEventListener("DOMContentLoaded", function () {
         const dateInput = document.querySelector('input[name="requested_date"]');
         const timeInput = document.querySelector('input[name="requested_time"]');

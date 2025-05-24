@@ -16,6 +16,6 @@ function sendMail(contactForm) {
             alert("Failed to send the message. Please try again later.");
         }
     );
-    // 🔥 Prevent the default form POST
+    
     return false;
 }
