@@ -20,16 +20,6 @@
 
 <!-- contact.html content starts here -->
 
-<!--Alert for message sent-->
-{% if messages %}
-{% for message in messages %}
-<div class="alert alert-success" role="alert">
-    {{ message }}
-</div>
-{% endfor %}
-{% endif %}
-
-
 <!-- Contact Us Section -->
 <section class="page-section cta">
     <div class="cta-inner bg-faded text-center rounded">
@@ -40,12 +30,13 @@
         </h2>
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <form method="POST" onsubmit="return sendMail(this);" action="{% url 'contact' %}" name="sentMessage" id="contactForm" novalidate>
+                <form method="POST" onsubmit="return sendMail(this);" action="{% url 'contact' %}" name="sentMessage"
+                    id="contactForm" novalidate>
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <div class="form-group floating-label-form-group controls">
-                                <label>Name</label>
+                                <label for="name">Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" placeholder="Name" name="name" id="name"
                                     required data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
@@ -53,7 +44,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="form-group floating-label-form-group controls">
-                                <label>Email Address</label>
+                                <label for="email">Email Address <span class="text-danger">*</span></label>
                                 <input type="email" class="form-control" placeholder="Email Address" name="email"
                                     id="email" required
                                     data-validation-required-message="Please enter your email address.">
@@ -65,16 +56,18 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <div class="form-group floating-label-form-group controls">
-                                <label>Phone Number</label>
+                                <label for="phone">Phone Number <span class="text-danger">*</span></label>
                                 <input type="tel" class="form-control" placeholder="Phone Number" name="phone"
                                     id="phone" required
-                                    data-validation-required-message="Please enter your phone number.">
+                                    data-validation-required-message="Please enter your phone number."
+                                    pattern="^(0[1-9]{1}[0-9]{7,8})$" minlength="9" maxlength="15"
+                                    title="Please enter a valid phone number with only numbers (e.g., 0871234567).">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="form-group floating-label-form-group controls">
-                                <label>Message Subject</label>
+                                <label for="subject">Message Subject <span class="text-danger">*</span></label>
                                 <textarea rows="1" class="form-control" placeholder="Subject" name="subject"
                                     id="subject" required data-validation-required-message="Please enter the subject."
                                     style="resize: none;"></textarea>
@@ -86,7 +79,7 @@
                     <div class="row">
                         <div class="col-12 mb-3">
                             <div class="form-group floating-label-form-group controls">
-                                <label>Message</label>
+                                <label for="message">Message <span class="text-danger">*</span></label>
                                 <textarea rows="5" class="form-control" placeholder="Your message..." name="message"
                                     id="message" required data-validation-required-message="Please enter a message."
                                     style="resize: none;"></textarea>
@@ -121,12 +114,14 @@
                 <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
                     aria-label="Toolbar with button groups">
                     <div class="btn-group me-2 " role="group" aria-label="First group">
-                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'book' %}">Book a
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'book' %}">Book
+                                a
                                 Table</a>
                         </div>
                     </div>
                     <div class="btn-group me-2" role="group" aria-label="Second group">
-                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'menu' %}">Menus</a>
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
+                                href="{% url 'menu' %}">Menus</a>
                         </div>
                     </div>
                 </div>
