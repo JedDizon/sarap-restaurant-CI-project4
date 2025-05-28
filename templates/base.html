@@ -127,27 +127,33 @@
         <div class="container">
 
             {% if request.resolver_match.url_name == 'menu' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
-                src="{% static 'assets/img/pexels-reneterp-restointerior1.jpg'%}" alt="Restaurant Interior">
+            <img fetchpriority="high" width="1200" height="800"
+                class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block"
+                src="{% static 'assets/img/pexels-reneterp-restointerior1.jpg' %}" alt="Restaurant Interior">
             {% elif request.resolver_match.url_name == 'book' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
+            <img fetchpriority="high" width="1200" height="800"
+                class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
                 src="{% static 'assets/img/pexels-eyupcan-timur-restoext1.jpg'%}" alt="Restaurant Exterior">
             {% elif request.resolver_match.url_name == 'location' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
+            <img fetchpriority="high" width="1200" height="800"
+                class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
                 src="{% static 'assets/img/pexels-daipi-restoext2.jpg'%}" alt="Restaurant Exterior">
             {% elif request.resolver_match.url_name == 'contact' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
+            <img fetchpriority="high" width="1200" height="800"
+                class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
                 src="{% static 'assets/img/pexels-gu-ko-restointerior3.jpg'%}" alt="Chef at counter">
             {% elif request.resolver_match.url_name == 'about' %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
+            <img fetchpriority="high" width="1200" height="800"
+                class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
                 src="{% static 'assets/img/baguiofestival2.jpg' %}" alt="Baguio Festival">
 
             {% elif request.resolver_match.url_name == 'account_login' %}
-            {% elif request.resolver_match.url_name == 'account_signup' %}
+            {% elif request.resolver_match.url_name == 'account_signup' %} 
             {% elif request.resolver_match.url_name == 'account_logout' %}
 
             {% else %}
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
+            <img fetchpriority="high" width="1200" height="800"
+                class="img-fluid rounded about-heading-img mb-3 mb-lg-0 d-block about-heading-img"
                 src="{% static 'assets/img/filipino_rice_cakes.jpg'%}" alt="Filipino Rice Cakes">
 
             <!-- DO CAROUSEL FOR HOME -->
