@@ -5,7 +5,7 @@ from .models import Post
 
 # Create your views here.
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.filter(status=1, is_active=True)
     template_name = "blog/index.html"
 
 def about_us(request, slug):
