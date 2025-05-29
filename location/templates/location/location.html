@@ -77,33 +77,36 @@
 <section class="page-section cta">
     <div class="cta-inner bg-faded text-center rounded">
         <h2 class="section-heading mb-4">
-            <span class="section-heading-lower">We're waiting to serve you!</span>
+            <span class="section-heading-lower">Sarap and comfort are just around the corner.</span>
         </h2>
-        <div class="row">
-            <div class="col-sm">
-            </div>
-            <div class="col-sm">
-                <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
-                    aria-label="Toolbar with button groups">
-                    <div class="btn-group me-2 " role="group" aria-label="First group">
-                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'book' %}">Book a
-                                Table</a>
-                        </div>
-                    </div>
-                    <div class="btn-group me-2" role="group" aria-label="Second group">
-                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'menu' %}">Menus</a>
-                        </div>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+
+            <div class="btn-toolbar d-flex justify-content-around" role="toolbar"
+                aria-label="Toolbar with button groups">
+
+                <div class="btn-group me-2 " role="group" aria-label="First group">
+                    <div class="intro-button mx-auto">
+                        <a class="btn btn-primary btn-xl" href="{% url 'book' %}">
+                            Book a Table
+                        </a>
                     </div>
                 </div>
+
+                <div class="btn-group me-2" role="group" aria-label="Second group">
+                    <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl"
+                            href="{% url 'menu' %}">Menus</a>
+                    </div>
+                </div>
+
             </div>
-            <div class="col-sm">
-            </div>
+
         </div>
     </div>
 </section>
 
 {% block scripts %}
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs8GdSA1iPGM6SJrEX7Z5efD2iqkT1s6U&callback=initMap"></script>
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs8GdSA1iPGM6SJrEX7Z5efD2iqkT1s6U&callback=initMap"></script>
 <script src="{% static 'js/location.js' %}"></script>
 {% endblock %}
 
