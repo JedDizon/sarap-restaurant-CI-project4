@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Menu
 
+
 def menu_render(request):
     """
     Renders the Menu page with related items
@@ -8,7 +9,7 @@ def menu_render(request):
     menu = Menu.objects.all().order_by('-updated_on').first()
 
     if menu:
-        items = menu.items.filter(is_active=True) 
+        items = menu.items.filter(is_active=True)
         starters = items.filter(category='Starter')
         mains = items.filter(category='Main')
         soups = items.filter(category='Soup')
