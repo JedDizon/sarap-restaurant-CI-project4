@@ -12,6 +12,7 @@ class MenuAdmin(SummernoteModelAdmin):
 
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'cost')
+    list_display = ('name', 'category', 'cost', 'is_active')
+    list_editable = ('is_active',)
     list_filter = ('category',)
     search_fields = ('name', 'description')

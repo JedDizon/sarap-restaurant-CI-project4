@@ -30,6 +30,7 @@ class MenuItem(models.Model):
     description = models.TextField()
     cost = models.DecimalField(max_digits=5, decimal_places=2)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+    is_active = models.BooleanField(default=True)
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='items')
 
     class Meta:
