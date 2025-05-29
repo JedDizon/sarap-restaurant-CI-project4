@@ -3,13 +3,18 @@ from django.utils import timezone
 from datetime import time
 from .models import Reservation
 
+
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ['requested_date', 'requested_time', 'seats', 'guest_name', 'guest_phone']
+        fields = [
+            'requested_date', 'requested_time',
+            'seats', 'guest_name', 'guest_phone']
         widgets = {
-            'requested_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
-            'requested_time': forms.TimeInput(attrs={'type': 'time', 'class': 'form-control'}),
+            'requested_date': forms.DateInput(attrs={
+                'type': 'date', 'class': 'form-control'}),
+            'requested_time': forms.TimeInput(
+                attrs={'type': 'time', 'class': 'form-control'}),
             'seats': forms.NumberInput(attrs={'class': 'form-control'}),
             'guest_name': forms.TextInput(attrs={'class': 'form-control'}),
             'guest_phone': forms.TextInput(attrs={'class': 'form-control'}),
@@ -29,7 +34,8 @@ class ReservationForm(forms.ModelForm):
         if requested_date < now.date() or (
             requested_date == now.date() and requested_time < now.time()
         ):
-            raise forms.ValidationError("You cannot book a date/time in the past.")
+            raise forms.ValidationError(
+                "You cannot book a date/time in the past.")
 
         # Opening hours
         weekday = requested_date.weekday()  # 0 = Monday
@@ -42,7 +48,10 @@ class ReservationForm(forms.ModelForm):
 
         if not (open_time <= requested_time <= close_time):
             raise forms.ValidationError(
-                f"On this day, bookings must be between {open_time.strftime('%H:%M')} and {close_time.strftime('%H:%M')}."
+                f"On this day, bookings must be between "
+                f"{open_time.strftime('%H:%M')} and "
+                f"{close_time.strftime('%H:%M')}."
+
             )
 
         return cleaned_data

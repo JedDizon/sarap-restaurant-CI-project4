@@ -8,6 +8,7 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1, is_active=True)
     template_name = "blog/index.html"
 
+
 def about_us(request, slug):
     """
     Display an individual :model:`blog.Post`.

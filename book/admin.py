@@ -10,7 +10,9 @@ class AboutAdmin(SummernoteModelAdmin):
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('user', 'guest_name', 'requested_date', 'requested_time', 'seats', 'status')
+    list_display = (
+        'user', 'guest_name', 'requested_date',
+        'requested_time', 'seats', 'status')
     list_filter = ('status',)
     search_fields = ('user__username', 'guest_name')
     list_editable = ('status',)
