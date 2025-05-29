@@ -8,8 +8,11 @@ class ReservationForm(forms.ModelForm):
         model = Reservation
         fields = ['requested_date', 'requested_time', 'seats', 'guest_name', 'guest_phone']
         widgets = {
-            'requested_date': forms.DateInput(attrs={'type': 'date'}),
-            'requested_time': forms.TimeInput(attrs={'type': 'time'}),
+            'requested_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'requested_time': forms.TimeInput(attrs={'type': 'time', 'class': 'form-control'}),
+            'seats': forms.NumberInput(attrs={'class': 'form-control'}),
+            'guest_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'guest_phone': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
     def clean(self):

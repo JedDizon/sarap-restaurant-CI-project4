@@ -61,7 +61,19 @@
                 <span class="section-heading-upper">Can't wait to see you here!</span>
             </h2>
             {% csrf_token %}
-            {{ form.as_p }}
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    {% for field in form %}
+                    <div class="mb-3">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.errors %}
+                        <div class="text-danger small">{{ field.errors|join:", " }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
             <div id="time-warning" class="alert alert-warning mt-2" style="display:none;">
                 Selected time is outside our opening hours for that day.
             </div>
@@ -135,12 +147,12 @@
 {% block bookscripts %}
 <script src="{% static 'js/booking.js' %}"></script>
 {% endblock %}
-    {% if messages %}
-    <script>
-        {% for message in messages %}
-        alert("{{ message|escapejs }}");
-        {% endfor %}
-    </script>
-    {% endif %}
+{% if messages %}
+<script>
+    {% for message in messages %}
+    alert("{{ message|escapejs }}");
+    {% endfor %}
+</script>
+{% endif %}
 
 {% endblock %}
